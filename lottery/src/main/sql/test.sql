@@ -24,6 +24,19 @@ CREATE TABLE `user` (
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `history`;
+CREATE TABLE `history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '历史id',
+  `uid` int(11) NOT NULL COMMENT '用户id',
+  `num1` int(11) NOT NULL COMMENT '个',
+  `num2` int(11) NOT NULL COMMENT '十',
+  `num3` int(11) NOT NULL COMMENT '百',
+  `num4` int(11) NOT NULL COMMENT '千',
+  `num5` int(11) NOT NULL COMMENT '万',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='投注历史表';
+
 -- ----------------------------
 -- Records of user
 -- ----------------------------
